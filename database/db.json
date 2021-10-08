@@ -1,0 +1,33 @@
+{
+  "reasons": [
+    {
+      "title": "Learn from the best",
+      "description": "The better the place the more talented the people. Simple as that. I can’t even imagine how much I would learn in four months. Senior Futurician as a mentor, wow!  Sharing knowledge and helping others are things I expect my future employer to value like I do. ",
+      "stars": 9,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "Consulting company",
+      "description": "Working in a consulting company would give me an opportunity to be in touch with multiple working fields. Considering this my understanding of different workflows could come in handy. ",
+      "stars": 8,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "You really care",
+      "description": "Everything tells me that you take a good care of your employees and I like that you refer to your work community as a family. Well-being of the employees is high priority for me. But it’s important that company not only cares for it’s workers but customers as well. I have to say that I was very impressed by your work in Rinnekoti-Säätiö. This kind of project requires ability to put yourself in someone elses position and true will to understand other peoples needs. These are things  that are not learnt from the book. They come from the heart. ",
+      "stars": 10,
+      "userId": 1,
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "username": "softskill_superhero",
+      "name": "Henna",
+      "passwordHash": "$2b$10$J4sjNQtdp.KjHK/SB9k08e7azWAidHawp1ylaEVXHUB/q/5gH6anS",
+      "id": 1
+    }
+  ]
+}
