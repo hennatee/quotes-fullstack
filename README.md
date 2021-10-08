@@ -8,6 +8,8 @@ React.js using redux
 ### Back-end
 Node.js
 
+---
+
 JSON-server is used as a database mockup
 
 This app is still in development phase
