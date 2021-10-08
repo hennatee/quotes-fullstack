@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/reasons
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvZnRza2lsbF9zdXBlcmhlcm8iLCJpZCI6MSwiaWF0IjoxNjMyOTQyNDk4fQ.fabn-QWaVRE6ZGW-enwd0N1TfAPs1mtLIO1Br34q_AI
+
+{
+  "title": "oioi",
+  "description": "Henna",
+  "stars": 0
+}
