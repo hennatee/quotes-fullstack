@@ -8,7 +8,6 @@ export const reasonService = {
 
   setToken: newToken => {
     token = `bearer ${newToken}`
-    console.log("token set", token)
   },
 
   getAll: async () => {
