@@ -29,7 +29,6 @@ export const ReasonList = () => {
     return (
       <div className="reason-list">
         <h1>Why Futurice?</h1>
-        <p>Reasons why I think I should work at Futurice.</p>
         <Notification/>  
         <ReasonForm />
         {reasonsToShow.map(reason =>
