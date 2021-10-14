@@ -3,6 +3,7 @@
 In this application users can add reasons why they would like to work at Futurice
 
 Application can be started from client directory
+
 New users can be created from server with .rest file 
 
 ### Front-end
