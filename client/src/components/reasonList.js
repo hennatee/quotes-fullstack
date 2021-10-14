@@ -7,12 +7,7 @@ import { Notification } from './notification'
 
 
 export const ReasonList = () => {
-/*
-    const reasonListStyle = {
-      display: 'flex',
-      flexDirection: 'column'
-    }
-  */
+
     let dispatch = useDispatch()
   
     useEffect(() => {
@@ -20,11 +15,11 @@ export const ReasonList = () => {
     }, [dispatch])
   
     const currentUser = useSelector(state => state.loginUser)
+    const reasons = useSelector(state => state.reasons)
   
     //show only users own reasons sorted by amount of given stars
-    const reasons = useSelector(state => state.reasons)
-    const ownReasons = reasons ? reasons.filter(reason => reason.user === currentUser) : []
-    const reasonsToShow = ownReasons ? reasons.sort((a, b) => (b.stars - a.stars)) : []
+    const ownReasons = reasons ? reasons.filter(reason => reason.userId === currentUser.id) : []
+    const reasonsToShow = ownReasons.sort((a, b) => (b.stars - a.stars))
   
     return (
       <div className="reason-list">
@@ -33,7 +28,7 @@ export const ReasonList = () => {
         <ReasonForm />
         {reasonsToShow.map(reason =>
             <Reason key={reason.id} reason={reason}/>
-        )}
+          )}
       </div>
     )
   }

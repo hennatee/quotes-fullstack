@@ -39,13 +39,15 @@ export const ReasonForm = () => {
       <h2>New reason</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          Title: <input
+          Title: 
+          <input
             value={title}
             onChange={handleTitleChange}
           />
         </div>
         <div>
-          Description: <input
+          Description: 
+          <input
             value={description}
             onChange={handleDescriptionChange}
           />

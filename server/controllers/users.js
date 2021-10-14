@@ -7,7 +7,7 @@ const usersURL = 'http://localhost:3004/users';
 
 usersRouter.get('/', async (request, response) => {
 
-     const res = await axios.get(usersURL)
+    const res = await axios.get(usersURL)
     response.json(res.data);
 })
 
