@@ -1,10 +1,10 @@
 # Web application for listing reasons
 
-In this application users can add reasons why they would like to work at Futurice
+In this application users can add reasons why they would like to work at Futurice.
 
-Application can be started from client directory
+Application can be started from client directory.
 
-New users can be created from server with .rest file 
+New users can be created from server with .rest file.
 
 ### Front-end
 React.js using redux
@@ -14,12 +14,12 @@ Node.js
 
 ---
 
-JSON-server is used as a database mockup
+JSON-server is used as a database mockup.
 
 .env file need to be added to server directory
 with variables
-`PORT`
-`SECRET`
-secret is for json web token and can be any string
+`PORT` and
+`SECRET`.
+Secret is for json web token and can be any string.
 
 
