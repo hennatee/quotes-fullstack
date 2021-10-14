@@ -20,5 +20,6 @@ JSON-server is used as a database mockup
 with variables
 `PORT`
 `SECRET`
+secret is for json web token and can be any string
 
 
