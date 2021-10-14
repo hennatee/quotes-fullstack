@@ -16,4 +16,9 @@ Node.js
 
 JSON-server is used as a database mockup
 
+.env file need to be added to server directory
+with variables
+`PORT`
+`SECRET`
+
 
