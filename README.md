@@ -19,8 +19,10 @@ JSON-server is used as a database mockup.
 5. In client directory run `npm install`
 6. Application can be started from client directory by running scripts `npm start`, `npm run server` and `npm run db`
 
+To log in to application:
+1. Create new user from server via .rest file
+2. Use credentials username: Hopo, password: testi
 
-New users can be created from server with .rest file.
 
 
 
