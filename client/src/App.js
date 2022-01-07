@@ -8,14 +8,12 @@ import {
   Route
 } from 'react-router-dom'
 
-
-
 export const App = () => {
 
   let dispatch = useDispatch()
   
     useEffect(() => {
-      const loggedUserJSON = window.localStorage.getItem('loggedReasonAppUser')
+      const loggedUserJSON = window.localStorage.getItem('loggedQuoteAppUser')
       if (loggedUserJSON) {
         const user = JSON.parse(loggedUserJSON)
         dispatch(loggedIn(user))
@@ -24,15 +22,12 @@ export const App = () => {
 
   const user = useSelector(state => state.loginUser)
 
-
   return (
     <Router>
       <Switch>
-
         <Route path="/">
           <HomePage user={user}/>
         </Route>
-
       </Switch>
     </Router>
   )
@@ -40,8 +35,6 @@ export const App = () => {
 
 //multiple routes can be added to router later
 //for example:
-//<Route path="/reasons/:id">
-//<Route path="/reasons">
-//<Route path="/users">
+//<Route path="/users/:id">
 
  
