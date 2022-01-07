@@ -1,4 +1,4 @@
-# Quotes
+# Quotes (web)
 
 Full-stack Web application where you can add inspirational quotes. <br/>
 This app is for demonstrating the use of Redux and Express.
