@@ -1,13 +1,13 @@
 # Quotes
 
-Full-stack Web application where you can add inspirational quotes.
-This app is for demonstrating the use of Redux and Express
+Full-stack Web application where you can add inspirational quotes. <br/>
+This app is for demonstrating the use of Redux and Express.
 
 ### Front-end / client directory
 React, Redux
 
 ### Back-end / server directory
-Node.js, Express
+Node.js, Express <br/>
 JSON-server is used as a database mockup.
 
 ## Run app locally
