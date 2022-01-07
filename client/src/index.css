@@ -3,7 +3,9 @@
   --darkGrey: #232931;
   --textHeading: #d4cd96;
   --veryLightGray: #EEEEEE;
-  --primaryGreen: #4ECCA3 ; 
+  --primaryGreen: #4ECCA3;
+  --darkGreen: #2c9773;
+  --red: #c2020c;
   --weight1: 200;
   --weight2: 400;
   --weight3: 600;
@@ -33,13 +35,13 @@ h1 {
   align-self: center;
 }
 
-.reason-list {
+.quote-list {
   margin: 2% 10%;
   display: flex;
   flex-direction: column;
 }
 
-.reason {
+.quote {
   margin: 10px 0px;
   max-width: 800px;
   padding: 20px;
@@ -50,12 +52,12 @@ h1 {
   box-shadow: 0px 5px 10px rgba(34, 35, 58, 0.5);
 }
 
-.reason h2 {
+.quote h2 {
   color: var(--darkGrey);
   margin-top: 0px;
 }
 
-.reason p {
+.quote p {
   color: var(--grey);
   font-weight: var(--weight2);
 }
@@ -73,6 +75,10 @@ button {
   color:hsl(0, 0%, 98%);
 }
 
+button:hover {
+  background-color: var(--darkGreen);
+}
+
 .remove-button {
   background-color: var(--veryLightGray);
   color: var(--grey);
@@ -82,12 +88,15 @@ button {
   border-radius: 0px 0px 0px 4px;
 }
 
-.add-stars-button, .cancel-togglable {
+.remove-button:hover {
+  background-color: var(--veryLightGray);
+  color: var(--red);
+}
+
+.add-likes-button, .cancel-togglable {
   margin-top: 5px;
   background-color: white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: var(--primaryGreen);
+  border: solid 2px var(--primaryGreen);
   color: var(--primaryGreen);
 }
 
@@ -99,7 +108,7 @@ button {
   justify-content: center; 
 }
 
-.stars {
+.likes {
   display: flex;
   flex-direction: row;
   align-items: center;
