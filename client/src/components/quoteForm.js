@@ -1,21 +1,21 @@
 
 import React, { useState } from 'react'
-import {  createReason } from '../reducers/reducer-reason'
+import {  createQuote } from '../reducers/reducer-quote'
 import { setNotification } from '../reducers/reducer-notification'
 import { useDispatch } from 'react-redux'
 import { Togglable } from './togglable'
 
 
-export const ReasonForm = () => {
-  const reasonFormRef = React.createRef()
+export const QuoteForm = () => {
+  const quoteFormRef = React.createRef()
 
-  const [title, setTitle] = useState('')
+  const [author, setAuthor] = useState('')
   const [description, setDescription] = useState('')
 
   let dispatch = useDispatch()
 
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value)
+  const handleAuthorChange = (e) => {
+    setAuthor(e.target.value)
   }
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value)
@@ -23,36 +23,36 @@ export const ReasonForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setTitle('')
+    setAuthor('')
     setDescription('')
-    dispatch(createReason({ 
-      title: title, 
+    dispatch(createQuote({ 
+      author: author, 
       description: description, 
-      stars: 0 
+      likes: 0 
     }))
-    dispatch(setNotification(`New reason ${title} added`, 5))
+    dispatch(setNotification(`New reason ${description} added`, 5))
   }
 
   return (
-    <Togglable buttonLabel='Add new reason' ref={reasonFormRef}>
+    <Togglable buttonLabel='Add new quote' ref={quoteFormRef}>
     <div>
-      <h2>New reason</h2>
+      <h2>New quote</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          Title: 
+          Author: 
           <input
-            value={title}
-            onChange={handleTitleChange}
+            value={author}
+            onChange={handleAuthorChange}
           />
         </div>
         <div>
-          Description: 
+          Quote: 
           <input
             value={description}
             onChange={handleDescriptionChange}
           />
         </div>
-        <button type="submit">Add reason</button>
+        <button type="submit">Add quote</button>
       </form>
     </div>
     </Togglable>

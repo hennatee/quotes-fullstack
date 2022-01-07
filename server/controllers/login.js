@@ -1,15 +1,15 @@
 const loginRouter = require('express').Router()
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const axios = require('axios');
+const axios = require('axios')
 
-const usersURL = 'http://localhost:3004/users';
+const usersURL = 'http://localhost:3004/users'
 
 
 loginRouter.post('/', async (request, response) => {
 
     const body = request.body
-    const res = await axios.get(`${usersURL}?username=${body.username}`);
+    const res = await axios.get(`${usersURL}?username=${body.username}`)
 
     const user = res.data[0]
 

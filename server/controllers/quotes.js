@@ -1,16 +1,16 @@
 const jwt = require('jsonwebtoken')
-const reasonsRouter = require('express').Router()
+const quotesRouter = require('express').Router()
 const axios = require('axios')
 
-const reasonsURL = 'http://localhost:3004/reasons'
+const quotesURL = 'http://localhost:3004/quotes'
 const usersURL = 'http://localhost:3004/users'
 
-reasonsRouter.get('/', async (request, response) => {
-    const res = await axios.get(`${reasonsURL}?_expand=user`)
+quotesRouter.get('/', async (request, response) => {
+    const res = await axios.get(`${quotesURL}?_expand=user`)
     response.json(res.data)
 })
 
-reasonsRouter.post('/', async (request, response, next) => {
+quotesRouter.post('/', async (request, response, next) => {
     try {
         const { token } = request
         let decodedToken
@@ -32,25 +32,25 @@ reasonsRouter.post('/', async (request, response, next) => {
             return response.status(401).json({ error: 'user missing or invalid' })
         }
 
-        const { title, description } = request.body
+        const { author, description } = request.body
 
-        const reason = {
-            title: title,
+        const quote = {
+            author: author,
             description: description,
-            stars: 0,
+            likes: 0,
             userId: user.id
         }
 
-        const { data: savedReason } = await axios.post(reasonsURL, reason)
+        const { data: savedQuote } = await axios.post(quotesURL, quote)
 
-        response.status(201).json({...savedReason, user})
+        response.status(201).json({...savedQuote, user})
 
     } catch (error) {
         next(error)
     }
 })
 
-reasonsRouter.delete('/:id', async (request, response, next) => {
+quotesRouter.delete('/:id', async (request, response, next) => {
     try {
         const { token } = request
         const { id } = request.params;
@@ -66,17 +66,17 @@ reasonsRouter.delete('/:id', async (request, response, next) => {
             return response.status(401).json({ error: 'token missing or invalid' })
         }
 
-        const { data: reason, status: getStatus } = await axios.get(`${reasonsURL}/${id}`)
+        const { data: quote, status: getStatus } = await axios.get(`${quotesURL}/${id}`)
 
         if (getStatus !== 200) {
             return response.status(401).json({ error: 'unauthorized user' })
         }
 
-        if (!decodedToken.id || reason.userId !== decodedToken.id) {
+        if (!decodedToken.id || quote.userId !== decodedToken.id) {
             return response.status(401).json({ error: 'unauthorized user' })
         }
 
-        const { status: deleteStatus } = await axios.delete(`${reasonsURL}/${id}`);
+        const { status: deleteStatus } = await axios.delete(`${quotesURL}/${id}`);
         response.status(deleteStatus === 200 ? 204 : deleteStatus).end();
 
     } catch (error) {
@@ -84,16 +84,16 @@ reasonsRouter.delete('/:id', async (request, response, next) => {
     }
 })
 
-reasonsRouter.put('/:id', async (request, response, next) => {
+quotesRouter.put('/:id', async (request, response, next) => {
     const { id } = request.params
-    const { stars } = request.body
+    const { likes } = request.body
   
     try {
-        await axios.patch(`${reasonsURL}/${id}`, { stars })
+        await axios.patch(`${quotesURL}/${id}`, { likes })
         response.json(request.body)
     } catch (error) { 
         next(error) 
     }
 })
 
-module.exports = reasonsRouter
+module.exports = quotesRouter

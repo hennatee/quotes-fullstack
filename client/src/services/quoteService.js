@@ -1,17 +1,17 @@
 import axios from 'axios'
 
-const reasonsURL = '/api/reasons'
+const quotesURL = '/api/quotes'
 let token = null
 
 
-export const reasonService = {
+export const quoteService = {
 
   setToken: newToken => {
     token = `bearer ${newToken}`
   },
 
   getAll: async () => {
-    const response = await axios.get(reasonsURL)
+    const response = await axios.get(quotesURL)
     return response.data
   },
 
@@ -19,7 +19,7 @@ export const reasonService = {
     const config = {
       headers: { Authorization: token },
     }
-    const response = await axios.post(reasonsURL, newObject, config)
+    const response = await axios.post(quotesURL, newObject, config)
     return response.data
   },
 
@@ -27,7 +27,7 @@ export const reasonService = {
     const config = {
       headers: { Authorization: token },
     }
-    const response = await axios.put(`${reasonsURL}/${id}`, newObject, config)
+    const response = await axios.put(`${quotesURL}/${id}`, newObject, config)
     return response.data
   },
 
@@ -35,7 +35,7 @@ export const reasonService = {
     const config = {
       headers: { Authorization: token },
     }
-    return axios.delete(`${reasonsURL}/${id}`, config)
+    return axios.delete(`${quotesURL}/${id}`, config)
   }
 
 }

@@ -1,20 +1,18 @@
 import { LoginForm } from "../components/loginForm"
 import { Logout } from "../components/logout"
-import { ReasonList } from "../components/reasonList"
+import { QuoteList } from "../components/quoteList"
 
 export const HomePage = ({user}) => {
 
     return (
-        
         <div>
             {user 
             ? <div>
                 <Logout user={user}/> 
-                <ReasonList/>
+                <QuoteList/>
               </div>  
             : <LoginForm/>
             }
-        
         </div>
     )
 }

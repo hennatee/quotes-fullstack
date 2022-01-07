@@ -1,5 +1,5 @@
 import { loginService } from '../services/loginService'
-import {reasonService } from '../services/reasonService'
+import {quoteService } from '../services/quoteService'
 import { setNotification } from './reducer-notification'
 
 const reducer = (state = null, action) => {
@@ -25,10 +25,10 @@ export const login = (username, password) => {
   return async dispatch => {
     try {
       const user = await loginService.login(credentials)
-      reasonService.setToken(user.token)
+      quoteService.setToken(user.token)
 
       window.localStorage.setItem(
-        'loggedReasonAppUser', JSON.stringify(user)
+        'loggedQuoteAppUser', JSON.stringify(user)
       )
       dispatch({
         type: 'LOGIN_USER',
@@ -44,7 +44,7 @@ export const login = (username, password) => {
 
 export const loggedIn = user => {
   return dispatch => {
-    reasonService.setToken(user.token)
+    quoteService.setToken(user.token)
     dispatch({
       type: 'LOGGED_USER',
       data: user,
@@ -54,7 +54,7 @@ export const loggedIn = user => {
 
 export const logoutUser = () => {
   return dispatch => {
-    window.localStorage.removeItem('loggedReasonAppUser')
+    window.localStorage.removeItem('loggedQuoteAppUser')
     dispatch({
       type: 'LOGOUT_USER',
     })
