@@ -12,15 +12,13 @@ export const QuoteList = () => {
   
     useEffect(() => {
       dispatch(initializeQuotes())
-      console.log("init")
     }, [dispatch])
   
     const quotes = useSelector(state => state.quotes)
-    console.log("quotes", quotes)
     const quotesSortedByLikes = quotes && quotes.sort((a, b) => (b.likes - a.likes))
   
     return (
-      <div className="quotes-list">
+      <div className="quote-list">
         <Notification/>  
         <QuoteForm />
         {quotes && quotesSortedByLikes.map(quote =>
