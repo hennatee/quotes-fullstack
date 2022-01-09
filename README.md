@@ -1,6 +1,8 @@
 # Quotes (web)
 
-Full-stack Web application where you can add inspirational quotes. <br/>
+![quote screenshot](https://github.com/hennatee/quotes-web/blob/main/quote-screenshot.PNG?raw=true)
+
+Full-stack web application where you can add quotes. <br/>
 This app is for demonstrating the use of Redux and Express.
 
 ### Front-end / client directory
