@@ -1,71 +1,23 @@
 :root {
   --grey: #393E46;
   --darkGrey: #232931;
-  --textHeading: #d4cd96;
-  --veryLightGray: #EEEEEE;
+  --veryLightGrey: #EEEEEE;
   --primaryGreen: #4ECCA3;
   --darkGreen: #2c9773;
   --red: #c2020c;
   --weight1: 200;
   --weight2: 400;
   --weight3: 600;
-
 }
 body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-h1 {
-  margin: 0;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-}
-
-.quote-list {
-  margin: 2% 10%;
-  display: flex;
-  flex-direction: column;
-}
-
-.quote {
-  margin: 10px 0px;
-  max-width: 800px;
-  padding: 20px;
-  position: relative;
-  border-width: 8px;
-  border-color: var(--primaryGreen);
-  border-style: none none none solid;
-  box-shadow: 0px 5px 10px rgba(34, 35, 58, 0.5);
-}
-
-.quote h2 {
-  color: var(--darkGrey);
-  margin-top: 0px;
-}
-
-.quote p {
-  color: var(--grey);
-  font-weight: var(--weight2);
-}
-
-input {
-  margin-bottom: 10px;
-}
-
 button {
   padding: 10px 20px;
   background-color: var(--primaryGreen);
@@ -74,11 +26,9 @@ button {
   font-weight: var(--weight3);
   color:hsl(0, 0%, 98%);
 }
-
 button:hover {
   background-color: var(--darkGreen);
 }
-
 .remove-button {
   background-color: var(--veryLightGray);
   color: var(--grey);
@@ -87,32 +37,67 @@ button:hover {
   right: 0;
   border-radius: 0px 0px 0px 4px;
 }
-
 .remove-button:hover {
-  background-color: var(--veryLightGray);
+  background-color: var(--veryLightGrey);
   color: var(--red);
 }
-
 .add-likes-button, .cancel-togglable {
   margin-top: 5px;
   background-color: white;
   border: solid 2px var(--primaryGreen);
   color: var(--primaryGreen);
 }
-
-.logout-container {
+/*LoginForm component */
+.login-form {
   display: flex;
-  background-color: var(--darkGrey);
-  padding: 2% 10%;
-  color: var(--veryLightGray);
-  justify-content: center; 
+  flex-direction: column;
+  padding: 5%;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
-
+input {
+  margin-bottom: 10px;
+}
+/*QuoteList component */
+.quote-list {
+  margin: 2% 10%;
+  display: flex;
+  flex-direction: column;
+}
+/*Quote component */
+.quote {
+  margin: 20px 0px;
+  max-width: 800px;
+  padding: 20px;
+  position: relative;
+  border-width: 8px;
+  border-color: var(--primaryGreen);
+  border-style: none none none solid;
+  box-shadow: 0px 5px 10px rgba(34, 35, 58, 0.5);
+}
+.quote h2 {
+  color: var(--darkGrey);
+  margin-top: 0px;
+}
+.quote p {
+  color: var(--grey);
+  font-weight: var(--weight2);
+}
 .likes {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+/*Logout component */
+.logout-container {
+  display: flex;
+  background-color: var(--darkGrey);
+  padding: 2% 10%;
+  color: var(--veryLightGrey);
+  justify-content: center; 
+}
+
 
 
 
