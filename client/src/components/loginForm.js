@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
-import { setNotification } from '../reducers/reducer-notification'
-import { login } from '../reducers/reducer-login'
+import { setNotification } from '../reducers/notificationReducer'
+import { login } from '../reducers/loginReducer'
 import { useDispatch } from 'react-redux'
 import { Notification } from './notification'
 

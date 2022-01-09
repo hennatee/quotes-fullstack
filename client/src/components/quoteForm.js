@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
-import {  createQuote } from '../reducers/reducer-quote'
-import { setNotification } from '../reducers/reducer-notification'
+import {  createQuote } from '../reducers/quoteReducer'
+import { setNotification } from '../reducers/notificationReducer'
 import { useDispatch } from 'react-redux'
 import { Togglable } from './togglable'
 

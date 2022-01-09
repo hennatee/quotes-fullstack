@@ -1,7 +1,7 @@
 import React, { useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { HomePage } from './pages/homePage'
-import { loggedIn } from './reducers/reducer-login'
+import { loggedIn } from './reducers/loginReducer'
 import {
   BrowserRouter as Router,
   Switch, 

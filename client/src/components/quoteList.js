@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { initializeQuotes } from '../reducers/reducer-quote'
+import { initializeQuotes } from '../reducers/quoteReducer'
 import { useSelector, useDispatch } from 'react-redux'
 import { QuoteForm } from './quoteForm'
 import { Quote } from './quote'

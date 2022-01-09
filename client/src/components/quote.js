@@ -1,5 +1,5 @@
-import { addLikes, removeQuote } from '../reducers/reducer-quote'
-import { setNotification } from '../reducers/reducer-notification'
+import { addLikes, removeQuote } from '../reducers/quoteReducer'
+import { setNotification } from '../reducers/notificationReducer'
 import { useDispatch } from 'react-redux'
 import Icon from '@mdi/react'
 import { mdiThumbUp } from '@mdi/js'

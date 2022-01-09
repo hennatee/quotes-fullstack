@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { logoutUser } from '../reducers/reducer-login'
+import { logoutUser } from '../reducers/loginReducer'
 import { useSelector, useDispatch } from 'react-redux'
 
 

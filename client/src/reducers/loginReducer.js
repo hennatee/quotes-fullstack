@@ -1,6 +1,6 @@
 import { loginService } from '../services/loginService'
 import {quoteService } from '../services/quoteService'
-import { setNotification } from './reducer-notification'
+import { setNotification } from './notificationReducer'
 
 const reducer = (state = null, action) => {
   switch (action.type) {
