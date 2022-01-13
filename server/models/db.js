@@ -4,21 +4,14 @@ const logger = require('../utils/logger')
 const dotenv = require('dotenv').config()
 
 /**
- * Get database connect URL.
- *
- * Reads URL from DBURL environment variable or
- * returns default URL if variable is not defined
+ * Gets database connect URL from environment
+ * variable
  *
  * @returns {string} connection URL
  */
 const getDbUrl = () => {
   const url = process.env.DBURL;
-  if (url === undefined) {
-    return 'mongodb://localhost:27017/WebShopDb'
-  }
-  else {
-    return url
-  }
+  return url
 }
 /**
  * Connect to database
