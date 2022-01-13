@@ -6,8 +6,8 @@ const quotesRouter = require('./controllers/quotes')
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
 
-const logger = require('./utils/logger')
-const config = require('./utils/config')
+const logger = require('./utils/logger').default
+const config = require('./utils/config').default
 const middleware = require('./utils/middleware')
 
 const app = express()

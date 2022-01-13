@@ -20,8 +20,8 @@ const reducer = (state = null, action) => {
   }
 }
 
-export const login = (username, password) => {
-  const credentials = {username, password}
+export const login = (email, password) => {
+  const credentials = {email, password}
   return async dispatch => {
     try {
       const user = await loginService.login(credentials)

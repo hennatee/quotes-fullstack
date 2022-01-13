@@ -16,3 +16,4 @@ export const HomePage = ({user}) => {
         </div>
     )
 }
+

@@ -17,26 +17,39 @@ export const quoteService = {
 
   create: async newObject => {
     const config = {
-      headers: { Authorization: token },
+      headers: { Authorization: token }
     }
-    const response = await axios.post(quotesURL, newObject, config)
-    return response.data
+    try {
+      const response = await axios.post(quotesURL, newObject, config)
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
   },
 
   update: async (id, newObject) => {
     const config = {
-      headers: { Authorization: token },
+      headers: { Authorization: token }
     }
-    const response = await axios.put(`${quotesURL}/${id}`, newObject, config)
-    return response.data
+    try {
+      const response = await axios.put(`${quotesURL}/${id}`, newObject, config)
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
   },
 
-  remove: id => {
+  remove: async id => {
     const config = {
-      headers: { Authorization: token },
+      headers: { Authorization: token }
     }
-    return axios.delete(`${quotesURL}/${id}`, config)
-  }
+    try {
+      const response = await axios.delete(`${quotesURL}/${id}`, config)
+      return response.data
+    } catch (error) {
+      console.error(error)
+    }
+  }  
 
 }
 

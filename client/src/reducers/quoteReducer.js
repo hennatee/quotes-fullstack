@@ -8,13 +8,13 @@ const reducer = (state = [], action) => {
     case 'ADD_LIKES': {
       const likedQuote = action.data
       return state.map(quote => 
-        quote.id !== likedQuote.id ? quote : likedQuote
+        quote._id !== likedQuote._id ? quote : likedQuote
       )
     }
     case 'REMOVE': {
       const removedQuote = action.data
-      return state.filter(reason => 
-        reason.id !== removedQuote.id
+      return state.filter(quote => 
+        quote._id !== removedQuote._id
       )
     }
     case 'INIT_QUOTES': {
@@ -36,18 +36,22 @@ export const initializeQuotes = () => {
 
 export const createQuote = quote => {
   return async dispatch => {
-    const newQuote = await quoteService.create(quote)
-    dispatch({
-      type: 'NEW_QUOTE',
-      data: newQuote,
-    })
+    try {
+      const newQuote = await quoteService.create(quote)
+      dispatch({
+        type: 'NEW_QUOTE',
+        data: newQuote,
+      })
+    } catch (error) {
+      console.error(error)
+    }
   }
 } 
 
 export const addLikes = quote => {
   const updatedQuote = {...quote, likes: quote.likes + 1}
   return async dispatch => {
-    const likedQuote = await quoteService.update(quote.id, updatedQuote)
+    const likedQuote = await quoteService.update(quote._id, updatedQuote)
     dispatch({
       type: 'ADD_LIKES',
       data: likedQuote,
@@ -57,11 +61,15 @@ export const addLikes = quote => {
 
 export const removeQuote = quote => {
   return async dispatch => {
-    await quoteService.remove(quote.id)
-    dispatch({
-      type: 'REMOVE',
-      data: quote,
-    })
+    try {
+      const removedQuote = await quoteService.remove(quote._id)
+      dispatch({
+        type: 'REMOVE',
+        data: removedQuote,
+      })
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
 

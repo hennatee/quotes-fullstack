@@ -1,31 +1,21 @@
-import React, { useEffect } from 'react'
-import { initializeQuotes } from '../reducers/quoteReducer'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { QuoteForm } from './quoteForm'
 import { Quote } from './quote'
 import { Notification } from './notification'
 
 
 export const QuoteList = () => {
-
-    let dispatch = useDispatch()
   
-    useEffect(() => {
-      dispatch(initializeQuotes())
-    }, [dispatch])
+  const quotes = useSelector(state => state.quotes)
+  const quotesSortedByLikes = quotes ? quotes.sort((a, b) => (b.likes - a.likes)) : []
   
-    const quotes = useSelector(state => state.quotes)
-    const quotesSortedByLikes = quotes && quotes.sort((a, b) => (b.likes - a.likes))
-  
-    return (
-      <div className="quote-list">
-        <Notification/>  
-        <QuoteForm />
-        {quotes && quotesSortedByLikes.map(quote =>
-            <Quote key={`quote-${quote.id}`} quote={quote}/>
-          )}
-      </div>
-    )
-  }
-
-
+  return (
+    <div className="quote-list">
+      <Notification />  
+      <QuoteForm />
+      {quotesSortedByLikes.map(quote =>
+        <Quote key={`quote-${quote._id}`} quote={quote}/>
+      )}
+    </div>
+  )
+}

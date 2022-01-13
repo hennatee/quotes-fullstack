@@ -30,7 +30,7 @@ export const QuoteForm = () => {
       description: description, 
       likes: 0 
     }))
-    dispatch(setNotification(`New reason ${description} added`, 5))
+    dispatch(setNotification(`New quote ${description} added`, 5))
   }
 
   return (

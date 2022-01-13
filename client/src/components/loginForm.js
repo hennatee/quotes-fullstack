@@ -7,20 +7,20 @@ import { Notification } from './notification'
 
 
 export const LoginForm = () => {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   let dispatch = useDispatch()
 
   const handleLogin = event => {
     event.preventDefault()
     try {
-      setUsername('')
+      setEmail('')
       setPassword('')
-      dispatch(login(username, password))
+      dispatch(login(email, password))
     } catch (exception) {
-      setUsername('')
+      setEmail('')
       setPassword('')
-      dispatch(setNotification('Wrong username or password', 5))
+      dispatch(setNotification('Wrong email or password', 5))
     }
   }
 
@@ -29,12 +29,12 @@ export const LoginForm = () => {
     <h1>Log in to application</h1>
     <Notification />
       <form onSubmit={handleLogin}>
-        <div>Username &nbsp;
+        <div>Email &nbsp;
         <input
             type="text"
-            value={username}
-            name="Username"
-            onChange={({ target }) => setUsername(target.value)}
+            value={email}
+            name="Email"
+            onChange={({ target }) => setEmail(target.value)}
           />
         </div>
         <div>Password &nbsp;

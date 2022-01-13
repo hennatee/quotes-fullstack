@@ -30,7 +30,7 @@ button:hover {
   background-color: var(--darkGreen);
 }
 .remove-button {
-  background-color: var(--veryLightGray);
+  background-color: var(--veryLightGrey);
   color: var(--grey);
   position: absolute;
   top: 0;
@@ -46,6 +46,11 @@ button:hover {
   background-color: white;
   border: solid 2px var(--primaryGreen);
   color: var(--primaryGreen);
+}
+.add-likes-button:hover, .cancel-togglable:hover {
+  background-color: white;
+  border: solid 2px var(--darkGreen);
+  color: var(--darkGreen);
 }
 /*LoginForm component */
 .login-form {
